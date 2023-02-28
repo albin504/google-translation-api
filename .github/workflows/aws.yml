@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: google-translation           # set this to your Amazon ECR repository name
   ECS_SERVICE: translation-api                 # set this to your Amazon ECS service name
   ECS_CLUSTER: goole-translation                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ../../google-translation-api-revision3.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: google-translation-api-revision3.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: api           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
@@ -73,10 +73,10 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        # docker build -t translation:latest .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        #docker push translation:latest
+        # docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY/translation:latest .
+        #docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY/translation:latest
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Fill in the new image ID in the Amazon ECS task definition
