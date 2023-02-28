@@ -1,4 +1,4 @@
-FROM golang:1.10
+FROM golang:1.18
 
 # Set the Current Working Directory inside the container
 WORKDIR $GOPATH/src/albin.com/translation
