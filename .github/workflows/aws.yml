@@ -32,7 +32,7 @@ on:
 
 env:
   AWS_REGION: ap-southeast-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: 324325127702.dkr.ecr.ap-southeast-1.amazonaws.com/google-translation           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: google-translation           # set this to your Amazon ECR repository name
   ECS_SERVICE: translation-api                 # set this to your Amazon ECS service name
   ECS_CLUSTER: goole-translation                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: google-translation-api # set this to the path to your Amazon ECS task definition
