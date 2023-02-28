@@ -3,7 +3,7 @@ FROM golang:1.10
 # Set the Current Working Directory inside the container
 WORKDIR $GOPATH/src/albin.com/translation
 
-ARG GOPROXY=https://proxy.golang.org
+ENV GOPROXY=https://proxy.golang.org
 
 # Copy everything from the current directory to the PWD (Present Working Directory) inside the container
 COPY . .
