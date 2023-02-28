@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:324325127702:task-definition/task-2:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:324325127702:task-definition/task-2:3",
     "containerDefinitions": [
         {
             "name": "api",
-            "image": "324325127702.dkr.ecr.ap-southeast-1.amazonaws.com/google-translation/translation:latest",
+            "image": "324325127702.dkr.ecr.ap-southeast-1.amazonaws.com/google-translation:90fd2faa8b6b62fc0f81947b0e05078cda8227ac",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,7 +16,6 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
             "logConfiguration": {
@@ -33,7 +32,7 @@
     "family": "task-2",
     "executionRoleArn": "arn:aws:iam::324325127702:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 1,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -64,12 +63,17 @@
         "EC2"
     ],
     "cpu": "1024",
-    "memory": "1024",
+    "memory": "2048",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-02-28T15:42:34.826Z",
+    "registeredAt": "2023-02-28T15:54:47.740Z",
     "registeredBy": "arn:aws:iam::324325127702:root",
-    "tags": []
+    "tags": [
+        {
+            "key": "version",
+            "value": "2"
+        }
+    ]
 }
