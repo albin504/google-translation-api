@@ -17,7 +17,7 @@ name: Deploy simple hello app to GKE
 on:
   push:
     branches:
-    - main
+    - master
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
@@ -47,7 +47,7 @@ jobs:
     #     workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
     #     service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
 
-    #Alternative option - authentication via credentials json
+    # Alternative option - authentication via credentials json
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
