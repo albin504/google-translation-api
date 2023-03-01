@@ -12,32 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: gke-goole-translation
+  name: gke-goole-translation-service
 spec:
-  replicas: 1
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
   selector:
-    matchLabels:
-      app: gke-goole-translation
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  minReadySeconds: 5
-  template:
-    metadata:
-      labels:
-        app: gke-goole-translation
-    spec:
-      containers:
-      - name: gke-goole-translation
-        image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 100m
+    app: gke-test
