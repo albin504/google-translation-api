@@ -15,7 +15,7 @@ func main() {
 	r.GET("/translation", func(c *gin.Context) {
 		english, _ := translateText("en", c.Query("term"))
 		c.JSON(http.StatusOK, gin.H{
-			"message": english,
+			"text": english,
 		})
 	})
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
